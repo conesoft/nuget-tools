@@ -9,11 +9,11 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<Version>0.0.1</Version>
+		<Version>0.0.2</Version>
 		<Authors>davepermen</Authors>
 		<Company>Conesoft</Company>
 		<PackageIcon>Conesoft.forNuget.x256.png</PackageIcon>
-		<PackageProjectUrl>https://github.com/conesoft/network-connections</PackageProjectUrl>
+		<PackageProjectUrl>https://github.com/conesoft/nuget-tools</PackageProjectUrl>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<Description>collection of assorted tools</Description>
