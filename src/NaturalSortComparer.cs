@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
+namespace Conesoft.Tools;
+
 public partial class NaturalSortComparer(bool inAscendingOrder = true) : IComparer<string>
 {
     public int Compare(string x, string y) => CompareAscenting(x, y) * (inAscendingOrder ? 1 : -1);
