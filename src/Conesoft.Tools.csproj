@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Authors>davepermen</Authors>
+		<Company>Conesoft</Company>
+		<RootNamespace>Conesoft.Tools</RootNamespace>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Version>0.0.1</Version>
+		<Authors>davepermen</Authors>
+		<Company>Conesoft</Company>
+		<PackageIcon>Conesoft.forNuget.x256.png</PackageIcon>
+		<PackageProjectUrl>https://github.com/conesoft/network-connections</PackageProjectUrl>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<Description>collection of assorted tools</Description>
+		<PackageTags>library dotnet-core</PackageTags>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="Conesoft.forNuget.x256.png" Pack="true" PackagePath="\" />
+		<None Include="..\README.md" Pack="true" PackagePath="\" />
+		<None Include="..\LICENSE" Pack="true" PackagePath="\" />
+	</ItemGroup>
+
+</Project>
