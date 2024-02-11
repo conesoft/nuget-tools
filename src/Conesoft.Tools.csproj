@@ -5,11 +5,12 @@
 		<Authors>davepermen</Authors>
 		<Company>Conesoft</Company>
 		<RootNamespace>Conesoft.Tools</RootNamespace>
+		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<Version>0.0.3</Version>
+		<Version>0.0.4</Version>
 		<Authors>davepermen</Authors>
 		<Company>Conesoft</Company>
 		<PackageIcon>Conesoft.forNuget.x256.png</PackageIcon>

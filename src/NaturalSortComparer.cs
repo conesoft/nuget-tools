@@ -1,19 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
 namespace Conesoft.Tools;
 
 public partial class NaturalSortComparer(bool inAscendingOrder = true) : IComparer<string>
 {
-    public int Compare(string x, string y) => CompareAscenting(x, y) * (inAscendingOrder ? 1 : -1);
+    public int Compare(string? x, string? y) => CompareAscenting(x, y) * (inAscendingOrder ? 1 : -1);
 
-    int CompareAscenting(string atext, string btext)
+    int CompareAscenting(string? atext, string? btext)
     {
         if (atext == btext)
         {
             return 0;
+        }
+
+        if(atext == null)
+        {
+            return 1;
+        }
+        if(btext == null)
+        {
+            return -1;
         }
 
         var segments = (
