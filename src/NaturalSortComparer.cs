@@ -4,9 +4,12 @@ namespace Conesoft.Tools;
 
 public partial class NaturalSortComparer(bool inAscendingOrder = true) : IComparer<string>
 {
+    public static readonly NaturalSortComparer Ascending = new(true);
+    public static readonly NaturalSortComparer Descending = new(false);
+
     public int Compare(string? x, string? y) => CompareAscenting(x, y) * (inAscendingOrder ? 1 : -1);
 
-    int CompareAscenting(string? atext, string? btext)
+    private static int CompareAscenting(string? atext, string? btext)
     {
         if (atext == btext)
         {
