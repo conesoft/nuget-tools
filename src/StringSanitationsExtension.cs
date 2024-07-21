@@ -1,8 +1,11 @@
-﻿using System.Web;
+﻿using System.ComponentModel;
+using System.Web;
 
 namespace Conesoft.Tools;
 
-static public class StringSanitationHelpers
+[Browsable(false)]
+[EditorBrowsable(EditorBrowsableState.Never)]
+static public class StringSanitationsExtension
 {
     public static string SafeFilename(this string filename, char replacement = '-')
     {

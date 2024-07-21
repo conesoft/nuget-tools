@@ -1,6 +1,11 @@
-﻿namespace Conesoft.Tools;
+﻿using System.ComponentModel;
 
-public static class OuterJoinHelper
+namespace System.Collections.Generic;
+
+
+[Browsable(false)]
+[EditorBrowsable(EditorBrowsableState.Never)]
+public static class OuterJoinExtension
 {
     public static IList<TR> FullOuterGroupJoin<TA, TB, TK, TR>(
         this IEnumerable<TA> a,
