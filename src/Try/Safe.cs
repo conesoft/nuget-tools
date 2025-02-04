@@ -1,6 +1,6 @@
 ﻿namespace Conesoft.Tools;
 
-static class Safe
+public static class Safe
 {
     public static T? Try<T>(Func<T?> action)
     {
