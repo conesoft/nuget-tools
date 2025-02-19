@@ -101,7 +101,7 @@ public static class Safe
         }
     }
 
-    public static async void TryAsync<E>(Func<Task> action) where E : Exception
+    public static async Task TryAsync<E>(Func<Task> action) where E : Exception
     {
         try
         {
