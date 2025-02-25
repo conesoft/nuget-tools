@@ -27,7 +27,7 @@ public static class OuterJoinExtension
                    let xb = blookup[key]
                    select projection(xa, xb, key);
 
-        return join.ToList();
+        return [.. join];
     }
 
     public static IList<TR> FullOuterJoin<TA, TB, TK, TR>(
@@ -52,6 +52,6 @@ public static class OuterJoinExtension
                    from xb in blookup[key].DefaultIfEmpty(defaultB)
                    select projection(xa, xb, key);
 
-        return join.ToList();
+        return [.. join];
     }
 }

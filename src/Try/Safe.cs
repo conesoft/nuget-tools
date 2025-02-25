@@ -1,4 +1,6 @@
-﻿namespace Conesoft.Tools;
+﻿using System;
+
+namespace Conesoft.Tools;
 
 public static class Safe
 {
@@ -8,8 +10,9 @@ public static class Safe
         {
             return action();
         }
-        catch (Exception)
+        catch (Exception exception)
         {
+            ErrorLogger.LogError("Safe.Try Exception: {exception}", exception);
             return default;
         }
     }
@@ -20,8 +23,9 @@ public static class Safe
         {
             action();
         }
-        catch (Exception)
+        catch (Exception exception)
         {
+            ErrorLogger.LogError("Safe.Try Exception: {exception}", exception);
         }
     }
 
@@ -31,8 +35,9 @@ public static class Safe
         {
             await action();
         }
-        catch (Exception)
+        catch (Exception exception)
         {
+            ErrorLogger.LogError("Safe.Try Exception: {exception}", exception);
         }
     }
 
@@ -42,8 +47,9 @@ public static class Safe
         {
             return await action();
         }
-        catch (Exception)
+        catch (Exception exception)
         {
+            ErrorLogger.LogError("Safe.Try Exception: {exception}", exception);
             return await Task.FromResult(default(T));
         }
     }
@@ -54,8 +60,9 @@ public static class Safe
         {
             return method();
         }
-        catch (E)
+        catch (E exception)
         {
+            ErrorLogger.LogError("Safe.Try Exception: {exception}", exception);
             return default;
         }
     }
@@ -66,12 +73,14 @@ public static class Safe
         {
             return method();
         }
-        catch (E1)
+        catch (E1 exception)
         {
+            ErrorLogger.LogError("Safe.Try Exception: {exception}", exception);
             return default;
         }
-        catch (E2)
+        catch (E2 exception)
         {
+            ErrorLogger.LogError("Safe.Try Exception: {exception}", exception);
             return default;
         }
     }
@@ -82,8 +91,9 @@ public static class Safe
         {
             action();
         }
-        catch (E)
+        catch (E exception)
         {
+            ErrorLogger.LogError("Safe.Try Exception: {exception}", exception);
         }
     }
 
@@ -93,11 +103,13 @@ public static class Safe
         {
             action();
         }
-        catch (E1)
+        catch (E1 exception)
         {
+            ErrorLogger.LogError("Safe.Try Exception: {exception}", exception);
         }
-        catch (E2)
+        catch (E2 exception)
         {
+            ErrorLogger.LogError("Safe.Try Exception: {exception}", exception);
         }
     }
 
@@ -107,8 +119,9 @@ public static class Safe
         {
             await action();
         }
-        catch (E)
+        catch (E exception)
         {
+            ErrorLogger.LogError("Safe.Try Exception: {exception}", exception);
         }
     }
 
@@ -118,8 +131,9 @@ public static class Safe
         {
             return await action();
         }
-        catch (E)
+        catch (E exception)
         {
+            ErrorLogger.LogError("Safe.Try Exception: {exception}", exception);
             return await Task.FromResult(default(T));
         }
     }
@@ -130,12 +144,14 @@ public static class Safe
         {
             return await action();
         }
-        catch (E1)
+        catch (E1 exception)
         {
+            ErrorLogger.LogError("Safe.Try Exception: {exception}", exception);
             return await Task.FromResult(default(T));
         }
-        catch (E2)
+        catch (E2 exception)
         {
+            ErrorLogger.LogError("Safe.Try Exception: {exception}", exception);
             return await Task.FromResult(default(T));
         }
     }
