@@ -1,9 +1,9 @@
-﻿using System;
-
-namespace Conesoft.Tools;
+﻿namespace Conesoft.Tools;
 
 public static class Safe
 {
+    public static Silent Silent { get; } = new();
+
     public static T? Try<T>(Func<T?> action)
     {
         try
