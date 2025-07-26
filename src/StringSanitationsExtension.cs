@@ -33,5 +33,7 @@ static public class StringSanitationsExtension
         return split[0];
     }
 
+    public static string WithoutWhitespaces(this string text) => string.Concat(text.Where(c => !char.IsWhiteSpace(c)));
+
     public static string UrlWithoutQueryString(this string url) => url.Split('?').First();
 }

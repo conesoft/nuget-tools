@@ -7,32 +7,31 @@ public partial class NaturalSortComparer(bool inAscendingOrder = true) : ICompar
     public static readonly NaturalSortComparer Ascending = new(true);
     public static readonly NaturalSortComparer Descending = new(false);
 
-    public int Compare(string? x, string? y) => CompareAscenting(x, y) * (inAscendingOrder ? 1 : -1);
+    public int Compare(string? x, string? y) => CompareAscending(x, y) * (inAscendingOrder ? 1 : -1);
 
-    private static int CompareAscenting(string? atext, string? btext)
+    private static int CompareAscending(string? atext, string? btext)
     {
         if (atext == btext)
         {
             return 0;
         }
 
-        if(atext == null)
+        if (atext == null)
         {
             return 1;
         }
-        if(btext == null)
+        if (btext == null)
         {
             return -1;
         }
 
         var segments = (
-            a: SplitStringByNumbers().Split(atext.Replace(" ", "")),
-            b: SplitStringByNumbers().Split(btext.Replace(" ", ""))
+            a: SplitStringByNumbers().Split(atext).Select(text => text.WithoutWhitespaces()).ToArray(),
+            b: SplitStringByNumbers().Split(btext).Select(text => text.WithoutWhitespaces()).ToArray()
         );
 
         var index = Enumerable.Range(0, Math.Min(segments.a.Length, segments.b.Length)).FirstOrDefault(i => segments.a[i] != segments.b[i], -1);
-
-        if(index >= 0)
+        if (index >= 0)
         {
             var s = (
                 a: segments.a[index],
