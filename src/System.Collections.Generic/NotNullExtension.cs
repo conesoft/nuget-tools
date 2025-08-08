@@ -6,5 +6,6 @@ namespace System.Collections.Generic;
 [EditorBrowsable(EditorBrowsableState.Never)]
 public static class NotNullExtension
 {
-    public static IEnumerable<T> NotNull<T>(this IEnumerable<T?> items) => items.Where(i => i != null).Cast<T>();
+    public static IEnumerable<T> NotNull<T>(this IEnumerable<T?> items) where T : struct => items.OfType<T>();
+    public static IEnumerable<T> NotNull<T>(this IEnumerable<T?> items) where T : class => items.OfType<T>();
 }
